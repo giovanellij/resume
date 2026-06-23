@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Julian Giovanelli — Software Engineer</title>
+  <meta name="description" content="Julian Giovanelli — Full-stack Software Engineer and Tech Lead with 9+ years building scalable web applications across .NET, Angular and Node.js, operating cloud-native microservices on GCP." />
+  <meta name="author" content="Julian Giovanelli" />
+  <link rel="canonical" href="https://juliangiovanelli.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Julian Giovanelli — Software Engineer" />
+  <meta property="og:description" content="Full-stack Software Engineer & Tech Lead. 9+ years across .NET, Angular and Node.js — billing, quoting and payment systems on cloud-native GCP microservices." />
+  <meta property="og:url" content="https://juliangiovanelli.com/" />
+  <meta property="og:site_name" content="Julian Giovanelli" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Julian Giovanelli — Software Engineer" />
+  <meta name="twitter:description" content="Full-stack Software Engineer & Tech Lead. 9+ years across .NET, Angular and Node.js." />
+
+  <!-- Theme color for mobile browser chrome -->
+  <meta name="theme-color" content="#2d8b8b" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#131C26" media="(prefers-color-scheme: dark)" />
+
+  <!-- Inline SVG favicon: JG monogram (no extra request) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%232d8b8b'/%3E%3Ctext%20x='50%25'%20y='52%25'%20dominant-baseline='middle'%20text-anchor='middle'%20font-family='Georgia,serif'%20font-size='30'%20font-weight='700'%20fill='%23ffffff'%3EJG%3C/text%3E%3C/svg%3E" />
+
+  <!-- Set theme before paint to avoid flash -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (stored === 'dark' || (!stored && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Inter (body/display) + IBM Plex Mono (the "ledger" data voice, used with restraint) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Sticky minimal nav -->
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top" aria-label="Julian Giovanelli — home">
+        <span class="nav__mark" aria-hidden="true">JG</span>
+        <span class="nav__name">Julian Giovanelli</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg class="theme-toggle__sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+        <svg class="theme-toggle__moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-name">
+      <div class="wrap">
+        <p class="hero__eyebrow">Software Engineer · Tech Lead</p>
+        <h1 class="hero__name" id="hero-name">Julian Giovanelli</h1>
+        <p class="hero__lede">
+          I'm a software engineer and tech lead who loves turning complex problems into
+          products people actually enjoy using. I care about doing things well, helping
+          my team grow, and never staying still — always learning, always curious.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="docs/CV_Julian_Giovanelli_SoftwareEngineer.pdf" download="Julian_Giovanelli_CV.pdf">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+            Download CV
+          </a>
+          <nav class="hero__contact" aria-label="Contact links">
+            <a href="mailto:julian_giovanelli@hotmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/julian-giovanelli-b42893164/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/giovanellij" target="_blank" rel="noopener">GitHub</a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Summary -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <p class="eyebrow">About</p>
+        <h2 class="section__title" id="about-title">Summary</h2>
+        <p class="prose">
+          Full-stack software engineer with 9+ years building scalable, maintainable web
+          applications, currently a Tech Lead. Strong background across .NET, Angular and
+          Node.js, with hands-on experience designing billing, quoting and payment systems,
+          integrating third-party and AI services, and operating cloud-native microservices
+          on GCP (GKE / Kubernetes). Experienced leading and mentoring cross-functional teams
+          and using AI tools to accelerate delivery. Passionate about clean architecture,
+          TDD and continuous learning.
+        </p>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="wrap">
+        <p class="eyebrow">Experience</p>
+        <h2 class="section__title" id="experience-title">Statement of work</h2>
+
+        <ol class="ledger">
+          <li class="entry">
+            <div class="entry__head">
+              <div class="entry__id">
+                <h3 class="entry__role">Software Engineer / Tech Lead</h3>
+                <p class="entry__org">Viirtue</p>
+              </div>
+              <span class="entry__date">Jan 2022 — Present</span>
+            </div>
+
+            <div class="entry__line">
+              <p class="line__title">Tech Lead <span class="line__date">Nov 2023 — Present</span></p>
+              <ul class="bullets">
+                <li>Led a cross-functional development team of up to 12 engineers, coordinating with stakeholders across the organization to deliver features effectively for ViiBE, Viirtue's white-label quote-to-cash platform.</li>
+                <li>Designed and delivered the end-to-end integration of an AI voice agent into the platform, capturing per-call usage and automating billing for AI-powered calls — opening a new usage-based revenue stream.</li>
+                <li>Refactored the entire reporting system into a more robust, standardized and functional solution, improving reliability and consistency across revenue, usage and accounts-receivable reports.</li>
+                <li>Partnered directly with customers to resolve complex, account-specific issues, designing tailored solutions and improving customer satisfaction.</li>
+                <li>Mentored teammates through pair programming and knowledge-sharing, fostering a collaborative environment where the team learns together.</li>
+              </ul>
+            </div>
+
+            <div class="entry__line">
+              <p class="line__title">Software Engineer <span class="line__date">Jan 2022 — Nov 2023</span></p>
+              <ul class="bullets">
+                <li>Built an end-customer portal that lets customers stay up to date with their bills and payments in real time, integrating Stripe and Authorize.Net for payment processing and reducing inbound billing-support requests.</li>
+                <li>Rebuilt the billing system from the ground up, improving reliability and accuracy of automated recurring and usage-based invoicing.</li>
+                <li>Rebuilt the quoting system, adding customer e-signature support to let customers sign quotes online and shorten the quote-to-close cycle.</li>
+                <li>Implemented an automated customer notification system (invoice statuses and payment confirmations) to reduce manual follow-up.</li>
+                <li>Built an integration with Rev.io and implemented document storage on Microsoft Azure to extend the platform's billing and storage capabilities.</li>
+                <li>Maintained and operated cloud-native microservices on GCP, containerized and deployed to Kubernetes (GKE), within a monorepo applying TDD.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="entry">
+            <div class="entry__head">
+              <div class="entry__id">
+                <h3 class="entry__role">Software Engineer</h3>
+                <p class="entry__org">Inamika</p>
+              </div>
+              <span class="entry__date">Mar 2020 — Dec 2021</span>
+            </div>
+            <ul class="bullets">
+              <li>Worked on an incremental web application using ASP.NET Core, ABP, MySQL and Angular to manage orders from different sources of sale.</li>
+              <li>Developed a web application to measure company progress and growth.</li>
+              <li>Helped improve infrastructure with AWS services (Lambda, EC2, CloudTrail).</li>
+            </ul>
+          </li>
+
+          <li class="entry">
+            <div class="entry__head">
+              <div class="entry__id">
+                <h3 class="entry__role">Software Engineer</h3>
+                <p class="entry__org">WB Sistemas SRL</p>
+              </div>
+              <span class="entry__date">Jan 2016 — Feb 2020</span>
+            </div>
+            <ul class="bullets">
+              <li>Introduced Scrum methodology and acted as team leader for newcomer projects.</li>
+              <li>Developed ASP.NET MVC applications applying SOLID, Entity Framework and Angular for maintainable, scalable and testable software.</li>
+              <li>Built a bus-ticket platform ("RosarioBus"), an e-learning platform ("Fray Luis Beltrán") and an e-commerce platform ("Wienner"/"Metrolab"), using ASP.NET (Core) MVC, Entity Framework, Angular, TDD, Scrum and IdentityServer.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="wrap">
+        <p class="eyebrow">Skills</p>
+        <h2 class="section__title" id="skills-title">Tools &amp; practices</h2>
+
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3 class="skill-group__title">Languages</h3>
+            <ul class="tags">
+              <li>C#</li><li>JavaScript</li><li>TypeScript</li><li>Java</li><li>SQL</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group__title">Backend</h3>
+            <ul class="tags">
+              <li>.NET / ASP.NET Core</li><li>ABP</li><li>Entity Framework</li><li>MediatR</li><li>MassTransit</li><li>Node.js</li><li>Spring/Hibernate</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group__title">Frontend</h3>
+            <ul class="tags">
+              <li>Angular</li><li>AngularJS</li><li>Ionic</li><li>jQuery</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group__title">Data</h3>
+            <ul class="tags">
+              <li>PostgreSQL</li><li>MySQL</li><li>SQL Server</li><li>Firebase</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group__title">Cloud &amp; DevOps</h3>
+            <ul class="tags">
+              <li>Google Cloud Platform (GKE)</li><li>Kubernetes</li><li>Docker</li><li>AWS</li><li>Azure</li><li>CI/CD (GoCD, Argo CD / GitOps)</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group__title">Integrations</h3>
+            <ul class="tags">
+              <li>Stripe</li><li>Authorize.Net</li><li>Rev.io</li><li>AI voice agents</li><li>Keycloak / IdentityServer (SSO)</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group__title">Practices</h3>
+            <ul class="tags">
+              <li>TDD</li><li>SOLID</li><li>Design patterns</li><li>Microservices</li><li>Monorepos</li><li>Cloud-native</li><li>Scrum</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group__title">AI tooling</h3>
+            <ul class="tags">
+              <li>Claude Code</li><li>GitHub Copilot</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group__title">Soft skills</h3>
+            <ul class="tags">
+              <li>Team leadership</li><li>Mentorship</li><li>Cross-functional collaboration</li><li>Continuous learning</li><li>Positive mindset</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education" aria-labelledby="education-title">
+      <div class="wrap">
+        <p class="eyebrow">Education</p>
+        <h2 class="section__title" id="education-title">Education</h2>
+        <ul class="cards">
+          <li class="card">
+            <h3 class="card__title">Systems Engineering <span class="card__note">(degree in progress)</span></h3>
+            <p class="card__meta">UTN – FRRo · 2017</p>
+            <p class="card__body">Completed coursework; one subject remaining.</p>
+          </li>
+          <li class="card">
+            <h3 class="card__title">Business-oriented High School Diploma</h3>
+            <p class="card__meta">EEM 419 · 2011</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <p class="eyebrow">Projects</p>
+        <h2 class="section__title" id="projects-title">Selected projects</h2>
+        <ul class="cards">
+          <li class="card">
+            <h3 class="card__title">Linead Group</h3>
+            <p class="card__body">Web/mobile platform for medical appointments and a patient-tracking CRM.</p>
+            <ul class="tags tags--sm">
+              <li>Node.js</li><li>Ionic</li><li>Angular</li><li>Firebase</li>
+            </ul>
+          </li>
+          <li class="card">
+            <h3 class="card__title">Mountain Stream</h3>
+            <p class="card__body">Ingredients and raw-material tracking modules.</p>
+            <ul class="tags tags--sm">
+              <li>ASP.NET Core MVC</li><li>Entity Framework</li><li>MediatR</li><li>TDD</li><li>AngularJS</li>
+            </ul>
+          </li>
+          <li class="card">
+            <h3 class="card__title">Hoteliga</h3>
+            <p class="card__body">Payment-integration, reservation-calendar and identity/security modules for a hotel-management platform.</p>
+            <ul class="tags tags--sm">
+              <li>ASP.NET (Core) MVC</li><li>AngularJS</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <p class="eyebrow">Contact</p>
+        <h2 class="section__title" id="contact-title">Let's talk</h2>
+        <ul class="contact-list">
+          <li><span class="contact-list__label">Email</span><a href="mailto:julian_giovanelli@hotmail.com">julian_giovanelli@hotmail.com</a></li>
+          <li><span class="contact-list__label">LinkedIn</span><a href="https://www.linkedin.com/in/julian-giovanelli-b42893164/" target="_blank" rel="noopener">julian-giovanelli</a></li>
+          <li><span class="contact-list__label">GitHub</span><a href="https://github.com/giovanellij" target="_blank" rel="noopener">github.com/giovanellij</a></li>
+          <li><span class="contact-list__label">Languages</span><span>Spanish (native) · English (professional working proficiency)</span></li>
+        </ul>
+        <p class="contact-cv">
+          <a class="link-arrow" href="docs/CV_Julian_Giovanelli_SoftwareEngineer.pdf" download="Julian_Giovanelli_CV.pdf">Download PDF résumé →</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span>© <span id="year">2026</span> Julian Giovanelli</span>
+      <a href="#top" class="footer__top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

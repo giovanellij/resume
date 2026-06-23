@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs / misc
+*.log
+node_modules/
+
+# Tooling / brief (not part of the site)
+.claude/
+.agents/
+skills-lock.json
+claude.MD
+
+# CV sources & alternate versions (only the linked SE PDF is published)
+docs/*.docx
+docs/CV_Julian_Giovanelli_TechLead.pdf

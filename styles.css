@@ -5,16 +5,17 @@
 
 /* ---- Tokens ---------------------------------------------------------- */
 :root {
-  /* Theme: Ocean Depths — deep navy + teal + seafoam on cream.
+  color-scheme: light;
+  /* Theme: Statement — teal ink on warm bond-paper ivory.
      --navy is the accent token (teal here), deepened for small-text contrast. */
-  --navy: #1F6F6F;
-  --navy-link: #1B6464;
-  --ink: #16222E;
-  --slate: #51616B;
-  --paper: #F1FAEE;          /* Ocean cream */
+  --navy: #1B6A6A;
+  --navy-link: #176060;
+  --ink: #1B2A2C;
+  --slate: #5C6A66;
+  --paper: #F7F4EC;          /* warm bond-paper ivory */
   --surface: #FFFFFF;
-  --hairline: #CFE0DA;       /* cool cream-teal hairline */
-  --tag-bg: #E4EFEA;         /* soft seafoam tint */
+  --hairline: #E4DDCF;       /* warm hairline */
+  --tag-bg: #EEE8DB;         /* warm paper tint */
 
   --maxw: 760px;
   --pad: clamp(1.25rem, 5vw, 2rem);
@@ -22,8 +23,13 @@
   --radius: 10px;
   --radius-sm: 7px;
 
-  --shadow: 0 1px 2px rgba(26, 35, 50, 0.05), 0 6px 24px rgba(45, 139, 139, 0.08);
+  --shadow: 0 1px 2px rgba(40, 33, 20, 0.05), 0 6px 24px rgba(27, 106, 106, 0.07);
+  /* Cards sit white-on-ivory, so fill alone barely separates (~1.1:1). A firmer
+     warm border + deeper shadow make the edge clearly perceivable. */
+  --card-border: #C7BBA3;
+  --card-shadow: 0 1px 2px rgba(40, 33, 20, 0.06), 0 10px 28px rgba(40, 33, 20, 0.11);
 
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", "Menlo", "Consolas", monospace;
 
@@ -32,15 +38,19 @@
 }
 
 [data-theme="dark"] {
+  color-scheme: dark;
+  /* Deep teal-ink — the statement at night */
   --navy: #5FB6B6;
-  --navy-link: #8AD0D0;
-  --ink: #E8F2EF;
-  --slate: #93A3A8;
-  --paper: #131C26;
-  --surface: #1B2733;
-  --hairline: #2A3946;
-  --tag-bg: #19232E;
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 6px 24px rgba(0, 0, 0, 0.4);
+  --navy-link: #84CFCF;
+  --ink: #EAF1ED;
+  --slate: #8FA3A0;
+  --paper: #0E1A1C;
+  --surface: #15282B;
+  --hairline: #284043;
+  --tag-bg: #15282B;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 6px 24px rgba(0, 0, 0, 0.45);
+  --card-border: #345055;
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 28px rgba(0, 0, 0, 0.5);
 }
 
 /* ---- Reset / base ---------------------------------------------------- */
@@ -64,9 +74,17 @@ body {
   transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
 }
 
-h1, h2, h3 { line-height: 1.15; margin: 0; font-weight: 700; letter-spacing: -0.02em; }
-p { margin: 0; }
+h1, h2, h3 { line-height: 1.15; margin: 0; font-weight: 700; letter-spacing: -0.02em; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
+
+a, button {
+  -webkit-tap-highlight-color: color-mix(in srgb, var(--navy) 18%, transparent);
+  touch-action: manipulation;
+}
+
+/* Metric emphasis — semibold (not accent-colored, to avoid reading as a link) */
+strong { font-weight: 600; color: var(--ink); }
 
 a {
   color: var(--navy-link);
@@ -85,7 +103,8 @@ a:hover { color: var(--ink); }
   width: 100%;
   max-width: var(--maxw);
   margin-inline: auto;
-  padding-inline: var(--pad);
+  padding-left: max(var(--pad), env(safe-area-inset-left));
+  padding-right: max(var(--pad), env(safe-area-inset-right));
 }
 
 .skip-link {
@@ -117,6 +136,8 @@ a:hover { color: var(--ink); }
   max-width: var(--maxw);
   margin-inline: auto;
   padding: 0.75rem var(--pad);
+  padding-left: max(var(--pad), env(safe-area-inset-left));
+  padding-right: max(var(--pad), env(safe-area-inset-right));
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -184,18 +205,19 @@ a:hover { color: var(--ink); }
   padding-bottom: clamp(2.5rem, 6vw, 4rem);
 }
 .hero__eyebrow {
-  font-family: var(--font-mono);
   font-size: var(--step-eyebrow);
-  font-weight: 500;
-  letter-spacing: 0.18em;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--navy);
   margin-bottom: 1.1rem;
 }
 .hero__name {
-  font-size: clamp(2.5rem, 8vw, 4rem);
-  font-weight: 800;
-  letter-spacing: -0.035em;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 8.5vw, 4.4rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  font-optical-sizing: auto;
 }
 .hero__lede {
   margin-top: 1.25rem;
@@ -214,10 +236,8 @@ a:hover { color: var(--ink); }
   display: inline-flex;
   gap: 1.25rem;
   flex-wrap: wrap;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  letter-spacing: 0.01em;
 }
 .hero__contact a { color: var(--slate); position: relative; }
 .hero__contact a:hover { color: var(--ink); }
@@ -268,16 +288,19 @@ a:hover { color: var(--ink); }
   border-top: 1px solid var(--hairline);
 }
 .eyebrow {
-  font-family: var(--font-mono);
   font-size: var(--step-eyebrow);
-  font-weight: 500;
-  letter-spacing: 0.18em;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--navy);
   margin-bottom: 0.6rem;
 }
 .section__title {
-  font-size: clamp(1.55rem, 4vw, 2rem);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-optical-sizing: auto;
+  font-size: clamp(1.65rem, 4.2vw, 2.1rem);
   position: relative;
   padding-bottom: 0.85rem;
   margin-bottom: 1.75rem;
@@ -300,12 +323,38 @@ a:hover { color: var(--ink); }
 .ledger { display: flex; flex-direction: column; }
 
 .entry {
-  padding-top: 1.5rem;
-  padding-bottom: 2rem;
-  border-top: 1px solid var(--hairline);
+  position: relative;
+  padding: 1.6rem 0 2.1rem clamp(1.5rem, 5vw, 2rem);
 }
-.entry:first-child { border-top: 2px solid var(--navy); }
-.entry:last-child { padding-bottom: 0; }
+.entry:last-child { padding-bottom: 0.25rem; }
+
+/* The spine: a continuous margin rule, like the left edge of an account statement.
+   Each entry draws its own abutting segment so the line is unbroken end to end. */
+.entry::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--hairline);
+}
+.entry:first-child::before { top: 2.05rem; } /* line opens at the first item */
+
+/* The line-item marker: each role posts to the statement as a transaction. */
+.entry::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.7rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background: var(--paper);
+  border: 2px solid var(--navy);
+}
+.entry:first-child::after { background: var(--navy); } /* current role = open line */
 
 .entry__head {
   display: flex;
@@ -315,7 +364,13 @@ a:hover { color: var(--ink); }
   flex-wrap: wrap;
   margin-bottom: 1.1rem;
 }
-.entry__role { font-size: 1.22rem; }
+.entry__role {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  font-optical-sizing: auto;
+  font-size: 1.3rem;
+}
 .entry__org {
   margin-top: 0.15rem;
   font-weight: 600;
@@ -381,12 +436,11 @@ a:hover { color: var(--ink); }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
 }
 .skill-group__title {
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  letter-spacing: 0.12em;
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--navy);
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 0.7rem;
 }
 .tags {
@@ -395,16 +449,15 @@ a:hover { color: var(--ink); }
   gap: 0.4rem;
 }
 .tags li {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 400;
-  padding: 0.26rem 0.6rem;
-  border-radius: 5px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.26rem 0.65rem;
+  border-radius: 6px;
   background: var(--tag-bg);
   color: var(--ink);
   border: 1px solid var(--hairline);
 }
-.tags--sm li { font-size: 0.72rem; padding: 0.18rem 0.5rem; }
+.tags--sm li { font-size: 0.78rem; padding: 0.18rem 0.55rem; }
 
 /* ---- Cards (Education / Projects) ----------------------------------- */
 .cards {
@@ -418,17 +471,17 @@ a:hover { color: var(--ink); }
 }
 .card {
   background: var(--surface);
-  border: 1px solid var(--hairline);
+  border: 1px solid var(--card-border);
   border-radius: var(--radius);
   padding: 1.25rem 1.3rem;
-  box-shadow: var(--shadow);
+  box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   transition: transform 0.18s var(--ease), border-color 0.18s var(--ease);
 }
 .card:hover { transform: translateY(-2px); border-color: var(--navy-link); }
-.card__title { font-size: 1.05rem; }
+.card__title { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.005em; font-optical-sizing: auto; font-size: 1.18rem; }
 .card__note { font-weight: 400; color: var(--slate); font-size: 0.92rem; }
 .card__meta { font-family: var(--font-mono); font-size: 0.75rem; color: var(--slate); font-variant-numeric: tabular-nums; letter-spacing: 0.01em; }
 .card__body { color: var(--ink); font-size: 0.95rem; }
@@ -447,12 +500,11 @@ a:hover { color: var(--ink); }
   align-items: baseline;
 }
 .contact-list__label {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--navy);
-  font-weight: 500;
+  font-weight: 600;
 }
 .contact-cv { margin-top: 1.75rem; }
 .link-arrow { font-weight: 600; }
@@ -461,9 +513,7 @@ a:hover { color: var(--ink); }
 .footer {
   border-top: 1px solid var(--hairline);
   padding-block: 1.75rem;
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  letter-spacing: 0.01em;
+  font-size: 0.82rem;
   color: var(--slate);
 }
 .footer__inner { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
@@ -484,7 +534,7 @@ a:hover { color: var(--ink); }
   :root {
     --ink: #000;
     --slate: #333;
-    --navy: #1F6F6F;
+    --navy: #1B6A6A;
     --paper: #fff;
     --surface: #fff;
     --hairline: #bbb;
@@ -495,8 +545,10 @@ a:hover { color: var(--ink); }
   .hero { padding-top: 0.5rem; padding-bottom: 1rem; }
   .hero__actions { margin-top: 0.75rem; }
   .section { padding-block: 0.85rem; border-top: 1px solid #ccc; break-inside: avoid; }
-  .entry { padding-block: 0.6rem 0.9rem; break-inside: avoid; }
-  .entry:first-child { border-top-color: #000; }
+  /* Drop the spine/markers on paper — they read as clutter in a printed PDF. */
+  .entry { padding: 0.6rem 0 0.9rem; border-top: 1px solid #ccc; break-inside: avoid; }
+  .entry::before, .entry::after { display: none; }
+  .entry:first-child { border-top: 2px solid #000; }
   .card { box-shadow: none; break-inside: avoid; }
   a { color: #000; }
   .wrap { max-width: none; }

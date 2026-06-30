@@ -487,6 +487,29 @@ a:hover { color: var(--ink); }
 .card__body { color: var(--ink); font-size: 0.95rem; }
 .card .tags { margin-top: auto; padding-top: 0.25rem; }
 
+/* Featured project — full-width, live link. Echoes the ledger's "open line" marker. */
+.card--featured { grid-column: 1 / -1; gap: 0.7rem; }
+.card--featured .card__title { font-size: 1.45rem; }
+.card--featured .tags { margin-top: 0.4rem; }
+.card__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--navy);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--navy) 22%, transparent);
+}
+.card__cta { margin-top: 0.2rem; }
+
 /* ---- Contact --------------------------------------------------------- */
 .contact-list {
   margin-top: 1.5rem;

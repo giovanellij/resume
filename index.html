@@ -18,6 +18,7 @@
   <meta property="og:url" content="https://juliangiovanelli.com/" />
   <meta property="og:site_name" content="Julian Giovanelli" />
   <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="es_ES" />
   <meta property="og:image" content="https://juliangiovanelli.com/assets/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -34,15 +35,24 @@
   <!-- Inline SVG favicon: JG monogram (no extra request) -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%231B6A6A'/%3E%3Ctext%20x='50%25'%20y='54%25'%20dominant-baseline='middle'%20text-anchor='middle'%20font-family='Georgia,serif'%20font-size='32'%20font-weight='700'%20fill='%23ffffff'%3EJG%3C/text%3E%3C/svg%3E" />
 
-  <!-- Set theme before paint to avoid flash -->
+  <!-- Set theme + language before paint to avoid a flash -->
   <script>
     (function () {
+      var d = document.documentElement;
       try {
         var stored = localStorage.getItem('theme');
         var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         if (stored === 'dark' || (!stored && prefersDark)) {
-          document.documentElement.setAttribute('data-theme', 'dark');
+          d.setAttribute('data-theme', 'dark');
         }
+      } catch (e) {}
+      try {
+        var p = new URLSearchParams(location.search).get('lang');
+        var sl = localStorage.getItem('lang');
+        var lang = (p === 'es' || p === 'en') ? p
+          : (sl === 'es' || sl === 'en') ? sl
+          : ((navigator.language || 'en').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
+        d.setAttribute('lang', lang);
       } catch (e) {}
     })();
   </script>
@@ -95,7 +105,7 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
   <!-- Sticky minimal nav -->
   <header class="nav" id="top">
@@ -105,17 +115,23 @@
         <span class="nav__name">Julian Giovanelli</span>
       </a>
       <nav class="nav__links" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#education" data-i18n="nav.education">Education</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
-        <svg class="theme-toggle__sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
-        <svg class="theme-toggle__moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg>
-      </button>
+      <div class="nav__tools">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" class="lang-toggle__btn" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-toggle__btn" data-lang="es" aria-pressed="false">ES</button>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+          <svg class="theme-toggle__sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+          <svg class="theme-toggle__moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -123,18 +139,18 @@
     <!-- Hero -->
     <section class="hero" aria-labelledby="hero-name">
       <div class="wrap">
-        <p class="hero__eyebrow">Software Engineer · Tech Lead</p>
+        <p class="hero__eyebrow" data-i18n="hero.eyebrow">Software Engineer · Tech Lead</p>
         <h1 class="hero__name" id="hero-name">Julian Giovanelli</h1>
-        <p class="hero__lede">
+        <p class="hero__lede" data-i18n="hero.lede">
           I’m a software engineer and tech lead who loves turning complex problems into
           products people actually enjoy using. I care about doing things well and
           helping my team grow.
         </p>
 
         <div class="hero__actions">
-          <a class="btn btn--primary" href="docs/CV_Julian_Giovanelli_SoftwareEngineer.pdf" download="Julian_Giovanelli_CV.pdf">
+          <a class="btn btn--primary" data-cv href="docs/CV_Julian_Giovanelli_SoftwareEngineer.pdf" download="Julian_Giovanelli_CV.pdf">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
-            Download CV
+            <span data-i18n="hero.cv">Download CV</span>
           </a>
           <nav class="hero__contact" aria-label="Contact links">
             <a href="mailto:julian_giovanelli@hotmail.com">Email</a>
@@ -148,9 +164,9 @@
     <!-- About / Summary -->
     <section class="section" id="about" aria-labelledby="about-title">
       <div class="wrap">
-        <p class="eyebrow">About</p>
-        <h2 class="section__title" id="about-title">Summary</h2>
-        <p class="prose">
+        <p class="eyebrow" data-i18n="about.eyebrow">About</p>
+        <h2 class="section__title" id="about-title" data-i18n="about.title">Summary</h2>
+        <p class="prose" data-i18n="about.body">
           Full-stack software engineer with 9+ years building scalable, maintainable web
           applications. Currently a Tech Lead. Strong background across .NET, Angular and
           Node.js, with hands-on experience designing billing, quoting and payment systems,
@@ -167,39 +183,39 @@
     <!-- Experience -->
     <section class="section" id="experience" aria-labelledby="experience-title">
       <div class="wrap">
-        <p class="eyebrow">Experience</p>
-        <h2 class="section__title" id="experience-title">Statement of work</h2>
+        <p class="eyebrow" data-i18n="exp.eyebrow">Experience</p>
+        <h2 class="section__title" id="experience-title" data-i18n="exp.title">Statement of work</h2>
 
         <ol class="ledger">
           <li class="entry">
             <div class="entry__head">
               <div class="entry__id">
-                <h3 class="entry__role">Software Engineer / Tech Lead</h3>
+                <h3 class="entry__role" data-i18n="exp.viirtue.role">Software Engineer / Tech Lead</h3>
                 <p class="entry__org">Viirtue</p>
               </div>
-              <span class="entry__date">Jan 2022 — Present</span>
+              <span class="entry__date" data-i18n="exp.viirtue.date">Jan 2022 — Present</span>
             </div>
 
             <div class="entry__line">
-              <p class="line__title">Tech Lead <span class="line__date">Nov 2023 — Present</span></p>
+              <p class="line__title">Tech Lead <span class="line__date" data-i18n="exp.tl.date">Nov 2023 — Present</span></p>
               <ul class="bullets">
-                <li>Led a cross-functional development team of <strong>up to 12 engineers</strong>, coordinating with stakeholders across the organization to deliver features effectively for ViiBE, Viirtue’s white-label quote-to-cash platform — now adopted by <strong>180+ partners (~65% of the partner base)</strong>.</li>
-                <li>Designed and delivered the end-to-end integration of an AI voice agent into the platform, capturing per-call usage and automating billing for AI-powered calls — opening a new usage-based revenue stream.</li>
-                <li>Refactored the entire reporting system into a more robust, standardized and functional solution, improving reliability and consistency across revenue, usage and accounts-receivable reports.</li>
-                <li>Partnered directly with customers to resolve complex, account-specific issues, designing tailored solutions and improving customer satisfaction.</li>
-                <li>Mentored teammates through pair programming and knowledge-sharing, fostering a collaborative environment where the team learns together.</li>
+                <li data-i18n="exp.tl.b1">Led a cross-functional development team of <strong>up to 12 engineers</strong>, coordinating with stakeholders across the organization to deliver features effectively for ViiBE, Viirtue’s white-label quote-to-cash platform — now adopted by <strong>180+ partners (~65% of the partner base)</strong>.</li>
+                <li data-i18n="exp.tl.b2">Designed and delivered the end-to-end integration of an AI voice agent into the platform, capturing per-call usage and automating billing for AI-powered calls — opening a new usage-based revenue stream.</li>
+                <li data-i18n="exp.tl.b3">Refactored the entire reporting system into a more robust, standardized and functional solution, improving reliability and consistency across revenue, usage and accounts-receivable reports.</li>
+                <li data-i18n="exp.tl.b4">Partnered directly with customers to resolve complex, account-specific issues, designing tailored solutions and improving customer satisfaction.</li>
+                <li data-i18n="exp.tl.b5">Mentored teammates through pair programming and knowledge-sharing, fostering a collaborative environment where the team learns together.</li>
               </ul>
             </div>
 
             <div class="entry__line">
-              <p class="line__title">Software Engineer <span class="line__date">Jan 2022 — Nov 2023</span></p>
+              <p class="line__title"><span data-i18n="exp.se.role">Software Engineer</span> <span class="line__date" data-i18n="exp.se.date">Jan 2022 — Nov 2023</span></p>
               <ul class="bullets">
-                <li>Built an end-customer portal that lets customers stay up to date with their bills and payments in real time, integrating Stripe and Authorize.Net for payment processing and reducing inbound billing-support requests.</li>
-                <li>Rebuilt the billing system from the ground up, improving reliability and accuracy of automated recurring and usage-based invoicing — now powering monthly invoicing for <strong>3,000+ accounts</strong> and <strong>close to $1M in monthly recurring revenue</strong>.</li>
-                <li>Rebuilt the quoting system, adding customer e-signature support to let customers sign quotes online and shorten the quote-to-close cycle.</li>
-                <li>Implemented an automated customer notification system (invoice statuses and payment confirmations) to reduce manual follow-up.</li>
-                <li>Built an integration with Rev.io and implemented document storage on Microsoft Azure to extend the platform’s billing and storage capabilities.</li>
-                <li>Maintained and operated cloud-native microservices on GCP, containerized and deployed to Kubernetes (GKE), within a monorepo applying TDD.</li>
+                <li data-i18n="exp.se.b1">Built an end-customer portal that lets customers stay up to date with their bills and payments in real time, integrating Stripe and Authorize.Net for payment processing and reducing inbound billing-support requests.</li>
+                <li data-i18n="exp.se.b2">Rebuilt the billing system from the ground up, improving reliability and accuracy of automated recurring and usage-based invoicing — now powering monthly invoicing for <strong>3,000+ accounts</strong> and <strong>close to $1M in monthly recurring revenue</strong>.</li>
+                <li data-i18n="exp.se.b3">Rebuilt the quoting system, adding customer e-signature support to let customers sign quotes online and shorten the quote-to-close cycle.</li>
+                <li data-i18n="exp.se.b4">Implemented an automated customer notification system (invoice statuses and payment confirmations) to reduce manual follow-up.</li>
+                <li data-i18n="exp.se.b5">Built an integration with Rev.io and implemented document storage on Microsoft Azure to extend the platform’s billing and storage capabilities.</li>
+                <li data-i18n="exp.se.b6">Maintained and operated cloud-native microservices on GCP, containerized and deployed to Kubernetes (GKE), within a monorepo applying TDD.</li>
               </ul>
             </div>
           </li>
@@ -207,30 +223,30 @@
           <li class="entry">
             <div class="entry__head">
               <div class="entry__id">
-                <h3 class="entry__role">Software Engineer</h3>
+                <h3 class="entry__role" data-i18n="exp.inamika.role">Software Engineer</h3>
                 <p class="entry__org">Inamika</p>
               </div>
-              <span class="entry__date">Mar 2020 — Dec 2021</span>
+              <span class="entry__date" data-i18n="exp.inamika.date">Mar 2020 — Dec 2021</span>
             </div>
             <ul class="bullets">
-              <li>Worked on an incremental web application using ASP.NET Core, ABP, MySQL and Angular to manage orders from different sources of sale.</li>
-              <li>Developed a web application to measure company progress and growth.</li>
-              <li>Helped improve infrastructure with AWS services (Lambda, EC2, CloudTrail).</li>
+              <li data-i18n="exp.inamika.b1">Worked on an incremental web application using ASP.NET Core, ABP, MySQL and Angular to manage orders from different sources of sale.</li>
+              <li data-i18n="exp.inamika.b2">Developed a web application to measure company progress and growth.</li>
+              <li data-i18n="exp.inamika.b3">Helped improve infrastructure with AWS services (Lambda, EC2, CloudTrail).</li>
             </ul>
           </li>
 
           <li class="entry">
             <div class="entry__head">
               <div class="entry__id">
-                <h3 class="entry__role">Software Engineer</h3>
+                <h3 class="entry__role" data-i18n="exp.wb.role">Software Engineer</h3>
                 <p class="entry__org">WB Sistemas SRL</p>
               </div>
-              <span class="entry__date">Jan 2016 — Feb 2020</span>
+              <span class="entry__date" data-i18n="exp.wb.date">Jan 2016 — Feb 2020</span>
             </div>
             <ul class="bullets">
-              <li>Introduced Scrum methodology and acted as team leader for newcomer projects.</li>
-              <li>Developed ASP.NET MVC applications applying SOLID, Entity Framework and Angular for maintainable, scalable and testable software.</li>
-              <li>Built a bus-ticket platform (“RosarioBus”), an e-learning platform (“Fray Luis Beltrán”) and an e-commerce platform (“Wienner”/“Metrolab”), using ASP.NET (Core) MVC, Entity Framework, Angular, TDD, Scrum and IdentityServer.</li>
+              <li data-i18n="exp.wb.b1">Introduced Scrum methodology and acted as team leader for newcomer projects.</li>
+              <li data-i18n="exp.wb.b2">Developed ASP.NET MVC applications applying SOLID, Entity Framework and Angular for maintainable, scalable and testable software.</li>
+              <li data-i18n="exp.wb.b3">Built a bus-ticket platform (“RosarioBus”), an e-learning platform (“Fray Luis Beltrán”) and an e-commerce platform (“Wienner”/“Metrolab”), using ASP.NET (Core) MVC, Entity Framework, Angular, TDD, Scrum and IdentityServer.</li>
             </ul>
           </li>
         </ol>
@@ -240,12 +256,12 @@
     <!-- Skills -->
     <section class="section" id="skills" aria-labelledby="skills-title">
       <div class="wrap">
-        <p class="eyebrow">Skills</p>
-        <h2 class="section__title" id="skills-title">Tools &amp; practices</h2>
+        <p class="eyebrow" data-i18n="skills.eyebrow">Skills</p>
+        <h2 class="section__title" id="skills-title" data-i18n="skills.title">Tools &amp; practices</h2>
 
         <div class="skills-grid">
           <div class="skill-group">
-            <h3 class="skill-group__title">Languages</h3>
+            <h3 class="skill-group__title" data-i18n="grp.languages">Languages</h3>
             <ul class="tags">
               <li>C#</li><li>JavaScript</li><li>TypeScript</li><li>Java</li><li>SQL</li>
             </ul>
@@ -263,7 +279,7 @@
             </ul>
           </div>
           <div class="skill-group">
-            <h3 class="skill-group__title">Data</h3>
+            <h3 class="skill-group__title" data-i18n="grp.data">Data</h3>
             <ul class="tags">
               <li>PostgreSQL</li><li>MySQL</li><li>SQL Server</li><li>Firebase</li>
             </ul>
@@ -275,27 +291,27 @@
             </ul>
           </div>
           <div class="skill-group">
-            <h3 class="skill-group__title">Integrations</h3>
+            <h3 class="skill-group__title" data-i18n="grp.integrations">Integrations</h3>
             <ul class="tags">
-              <li>Stripe</li><li>Authorize.Net</li><li>Rev.io</li><li>AI voice agents</li><li>Keycloak / IdentityServer (SSO)</li>
+              <li>Stripe</li><li>Authorize.Net</li><li>Rev.io</li><li data-i18n="tag.aivoice">AI voice agents</li><li>Keycloak / IdentityServer (SSO)</li>
             </ul>
           </div>
           <div class="skill-group">
-            <h3 class="skill-group__title">Practices</h3>
+            <h3 class="skill-group__title" data-i18n="grp.practices">Practices</h3>
             <ul class="tags">
-              <li>TDD</li><li>SOLID</li><li>Design patterns</li><li>Microservices</li><li>Monorepos</li><li>Cloud-native</li><li>Scrum</li>
+              <li>TDD</li><li>SOLID</li><li data-i18n="tag.designpatterns">Design patterns</li><li data-i18n="tag.microservices">Microservices</li><li>Monorepos</li><li>Cloud-native</li><li>Scrum</li>
             </ul>
           </div>
           <div class="skill-group">
-            <h3 class="skill-group__title">AI tooling</h3>
+            <h3 class="skill-group__title" data-i18n="grp.ai">AI tooling</h3>
             <ul class="tags">
               <li>Claude Code</li><li>GitHub Copilot</li>
             </ul>
           </div>
           <div class="skill-group">
-            <h3 class="skill-group__title">Soft skills</h3>
+            <h3 class="skill-group__title" data-i18n="grp.soft">Soft skills</h3>
             <ul class="tags">
-              <li>Team leadership</li><li>Mentorship</li><li>Cross-functional collaboration</li><li>Continuous learning</li><li>Positive mindset</li>
+              <li data-i18n="tag.leadership">Team leadership</li><li data-i18n="tag.mentorship">Mentorship</li><li data-i18n="tag.crossfunc">Cross-functional collaboration</li><li data-i18n="tag.learning">Continuous learning</li><li data-i18n="tag.positive">Positive mindset</li>
             </ul>
           </div>
         </div>
@@ -305,16 +321,16 @@
     <!-- Education -->
     <section class="section" id="education" aria-labelledby="education-title">
       <div class="wrap">
-        <p class="eyebrow">Education</p>
-        <h2 class="section__title" id="education-title">Education</h2>
+        <p class="eyebrow" data-i18n="edu.eyebrow">Education</p>
+        <h2 class="section__title" id="education-title" data-i18n="edu.title">Education</h2>
         <ul class="cards">
           <li class="card">
-            <h3 class="card__title">Systems Engineering <span class="card__note">(degree in progress)</span></h3>
+            <h3 class="card__title"><span data-i18n="edu.se.title">Systems Engineering</span> <span class="card__note" data-i18n="edu.se.note">(degree in progress)</span></h3>
             <p class="card__meta">UTN – FRRo · 2017</p>
-            <p class="card__body">Completed coursework; one subject remaining.</p>
+            <p class="card__body" data-i18n="edu.se.body">Completed coursework; one subject remaining.</p>
           </li>
           <li class="card">
-            <h3 class="card__title">Business-oriented High School Diploma</h3>
+            <h3 class="card__title" data-i18n="edu.hs.title">Business-oriented High School Diploma</h3>
             <p class="card__meta">EEM 419 · 2011</p>
           </li>
         </ul>
@@ -324,35 +340,35 @@
     <!-- Projects -->
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="wrap">
-        <p class="eyebrow">Projects</p>
-        <h2 class="section__title" id="projects-title">Selected projects</h2>
+        <p class="eyebrow" data-i18n="proj.eyebrow">Projects</p>
+        <h2 class="section__title" id="projects-title" data-i18n="proj.title">Selected projects</h2>
         <ul class="cards">
           <li class="card card--featured">
-            <p class="card__eyebrow"><span class="live-dot" aria-hidden="true"></span>Featured · Live</p>
+            <p class="card__eyebrow"><span class="live-dot" aria-hidden="true"></span><span data-i18n="proj.featured.badge">Featured · Live</span></p>
             <h3 class="card__title">María Castaña</h3>
-            <p class="card__body">E-commerce PWA for an artisanal dry-fruits, nut-mix and honey business with home delivery — product catalog, shopping cart, customer accounts and order management, built as a hybrid web / PWA / mobile app and deployed on Firebase.</p>
+            <p class="card__body" data-i18n="proj.maria.body">E-commerce PWA for an artisanal dry-fruits, nut-mix and honey business with home delivery — product catalog, shopping cart, customer accounts and order management, built as a hybrid web / PWA / mobile app and deployed on Firebase.</p>
             <ul class="tags tags--sm">
               <li>Angular 20</li><li>Ionic</li><li>Capacitor</li><li>Firebase</li><li>PWA</li>
             </ul>
-            <p class="card__cta"><a class="link-arrow" href="https://maria-castania-8edba.web.app/" target="_blank" rel="noopener">Visit site →</a></p>
+            <p class="card__cta"><a class="link-arrow" href="https://maria-castania-8edba.web.app/" target="_blank" rel="noopener" data-i18n="proj.maria.cta">Visit site →</a></p>
           </li>
           <li class="card">
             <h3 class="card__title">Linead Group</h3>
-            <p class="card__body">Web/mobile platform for medical appointments and a patient-tracking CRM.</p>
+            <p class="card__body" data-i18n="proj.linead.body">Web/mobile platform for medical appointments and a patient-tracking CRM.</p>
             <ul class="tags tags--sm">
               <li>Node.js</li><li>Ionic</li><li>Angular</li><li>Firebase</li>
             </ul>
           </li>
           <li class="card">
             <h3 class="card__title">Mountain Stream</h3>
-            <p class="card__body">Ingredients and raw-material tracking modules.</p>
+            <p class="card__body" data-i18n="proj.mountain.body">Ingredients and raw-material tracking modules.</p>
             <ul class="tags tags--sm">
               <li>ASP.NET Core MVC</li><li>Entity Framework</li><li>MediatR</li><li>TDD</li><li>AngularJS</li>
             </ul>
           </li>
           <li class="card">
             <h3 class="card__title">Hoteliga</h3>
-            <p class="card__body">Payment-integration, reservation-calendar and identity/security modules for a hotel-management platform.</p>
+            <p class="card__body" data-i18n="proj.hoteliga.body">Payment-integration, reservation-calendar and identity/security modules for a hotel-management platform.</p>
             <ul class="tags tags--sm">
               <li>ASP.NET (Core) MVC</li><li>AngularJS</li>
             </ul>
@@ -364,16 +380,16 @@
     <!-- Contact -->
     <section class="section section--contact" id="contact" aria-labelledby="contact-title">
       <div class="wrap">
-        <p class="eyebrow">Contact</p>
-        <h2 class="section__title" id="contact-title">Let’s talk</h2>
+        <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+        <h2 class="section__title" id="contact-title" data-i18n="contact.title">Let’s talk</h2>
         <ul class="contact-list">
           <li><span class="contact-list__label">Email</span><a href="mailto:julian_giovanelli@hotmail.com">julian_giovanelli@hotmail.com</a></li>
           <li><span class="contact-list__label">LinkedIn</span><a href="https://www.linkedin.com/in/julian-giovanelli-b42893164/" target="_blank" rel="noopener">julian-giovanelli</a></li>
           <li><span class="contact-list__label">GitHub</span><a href="https://github.com/giovanellij" target="_blank" rel="noopener">github.com/giovanellij</a></li>
-          <li><span class="contact-list__label">Languages</span><span>Spanish (native) · English (professional working proficiency)</span></li>
+          <li><span class="contact-list__label" data-i18n="contact.lbl.languages">Languages</span><span data-i18n="contact.langs">Spanish (native) · English (professional working proficiency)</span></li>
         </ul>
         <p class="contact-cv">
-          <a class="link-arrow" href="docs/CV_Julian_Giovanelli_SoftwareEngineer.pdf" download="Julian_Giovanelli_CV.pdf">Download PDF résumé →</a>
+          <a class="link-arrow" data-cv href="docs/CV_Julian_Giovanelli_SoftwareEngineer.pdf" download="Julian_Giovanelli_CV.pdf" data-i18n="contact.cv">Download PDF résumé →</a>
         </p>
       </div>
     </section>
@@ -382,7 +398,7 @@
   <footer class="footer">
     <div class="wrap footer__inner">
       <span>© <span id="year">2026</span> Julian Giovanelli</span>
-      <a href="#top" class="footer__top">Back to top ↑</a>
+      <a href="#top" class="footer__top" data-i18n="footer.top">Back to top ↑</a>
     </div>
   </footer>
 

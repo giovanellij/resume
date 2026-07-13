@@ -105,16 +105,12 @@
     en: {
       title: 'Julian Giovanelli — Software Engineer',
       desc: 'Julian Giovanelli — Full-stack Software Engineer and Tech Lead, 9+ years across .NET, Angular and Node.js. Built billing systems now processing ~$1M MRR on GCP microservices, contributing to a $10M Series A.',
-      cvHref: 'docs/CV_Julian_Giovanelli_SoftwareEngineer.pdf',
-      cvName: 'Julian_Giovanelli_CV.pdf',
       themeToDark: 'Switch to dark mode',
       themeToLight: 'Switch to light mode'
     },
     es: {
       title: 'Julian Giovanelli — Ingeniero de Software',
       desc: 'Julian Giovanelli — Ingeniero de Software full-stack y Tech Lead, más de 9 años en .NET, Angular y Node.js. Construí sistemas de facturación que hoy procesan ~US$1M de ingresos recurrentes mensuales en microservicios sobre GCP, contribuyendo a una Serie A de US$10M.',
-      cvHref: 'docs/CV_Julian_Giovanelli_SoftwareEngineer_ES.pdf',
-      cvName: 'Julian_Giovanelli_CV_ES.pdf',
       themeToDark: 'Cambiar a modo oscuro',
       themeToLight: 'Cambiar a modo claro'
     }
@@ -153,12 +149,6 @@
     document.title = m.title;
     var desc = document.querySelector('meta[name="description"]');
     if (desc) desc.setAttribute('content', m.desc);
-    // CV links (href + download filename)
-    var cvs = document.querySelectorAll('[data-cv]');
-    for (var k = 0; k < cvs.length; k++) {
-      cvs[k].setAttribute('href', m.cvHref);
-      cvs[k].setAttribute('download', m.cvName);
-    }
     // Language toggle state
     var lbtns = document.querySelectorAll('.lang-toggle__btn');
     for (var l = 0; l < lbtns.length; l++) {

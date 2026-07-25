@@ -91,7 +91,7 @@ few hours), go back to **Settings → Pages** and tick **Enforce HTTPS**.
 
 - Website: [juliangiovanelli.com](https://juliangiovanelli.com)
 - LinkedIn: [julian-giovanelli](https://www.linkedin.com/in/julian-giovanelli-b42893164/)
-- Email: julian_giovanelli@hotmail.com
+- Email: jjulian.giovanelli@gmail.com
 
 ## License
 

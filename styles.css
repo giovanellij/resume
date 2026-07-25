@@ -355,6 +355,18 @@ a:hover { color: var(--ink); }
 }
 .prose { max-width: 64ch; color: var(--ink); }
 
+/* Core strengths — a scannable dot-separated strip under the summary */
+.strengths {
+  margin-top: 1.5rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--hairline);
+  max-width: 64ch;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.9;
+  color: var(--slate);
+}
+
 /* ---- Experience: "statement of work" (signature) -------------------- */
 /* The career, itemized like an account: role on the left, mono tabular
    dates aligned down the right, hairline rules between line items. */
@@ -413,6 +425,12 @@ a:hover { color: var(--ink); }
   margin-top: 0.15rem;
   font-weight: 600;
   color: var(--navy);
+}
+.entry__context {
+  margin-top: 0.2rem;
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--slate);
 }
 .entry__date {
   font-family: var(--font-mono);

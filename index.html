@@ -95,6 +95,9 @@
       "Kubernetes",
       "Google Cloud Platform",
       "Billing and Payment Systems",
+      "Event-Driven Architecture",
+      "MassTransit / RabbitMQ",
+      "AI-Assisted Engineering",
       "Test-Driven Development"
     ],
     "sameAs": [
@@ -142,9 +145,10 @@
         <p class="hero__eyebrow" data-i18n="hero.eyebrow">Software Engineer · Tech Lead</p>
         <h1 class="hero__name" id="hero-name">Julian Giovanelli</h1>
         <p class="hero__lede" data-i18n="hero.lede">
-          I’m a software engineer and tech lead who loves turning complex problems into
-          products people actually enjoy using. I care about doing things well and
-          helping my team grow.
+          I lead the team behind ViiBE, Viirtue’s white-label quote-to-cash platform —
+          from a billing engine processing close to $1M in monthly recurring revenue
+          to usage-based billing for AI voice agents. I love turning complex problems
+          into products people actually enjoy using, and helping my team grow.
         </p>
 
         <div class="hero__actions">
@@ -168,15 +172,18 @@
         <h2 class="section__title" id="about-title" data-i18n="about.title">Summary</h2>
         <p class="prose" data-i18n="about.body">
           Full-stack software engineer with 9+ years building scalable, maintainable web
-          applications. Currently a Tech Lead. Strong background across .NET, Angular and
-          Node.js, with hands-on experience designing billing, quoting and payment systems,
-          integrating third-party and AI services, and operating cloud-native microservices
-          on GCP (GKE / Kubernetes). Experienced in leading and mentoring cross-functional teams
-          and using AI tools to accelerate delivery. Built core billing systems now processing
-          <strong>close to $1M in monthly recurring revenue</strong>, contributing to a
-          <strong>$10M Series A</strong>. Passionate about clean architecture, TDD and continuous
-          learning.
+          applications — currently Tech Lead for ViiBE, Viirtue’s white-label quote-to-cash
+          platform, and one of the top contributors to its 40+ microservice codebase.
+          Rebuilt the billing engine now processing <strong>close to $1M in monthly recurring
+          revenue</strong> across <strong>3,000+ accounts</strong>, contributing to a
+          <strong>$10M Series A</strong>. Deep experience across .NET, Angular and Node.js:
+          designing billing, quoting, taxation and payment systems, integrating third-party
+          and AI services, and operating event-driven, cloud-native microservices on GCP
+          (GKE / Kubernetes). Leads and mentors a cross-functional team of up to 12, working
+          AI-first with agentic tools like Claude Code across the development lifecycle.
+          Passionate about clean architecture, TDD and continuous learning.
         </p>
+        <p class="strengths" data-i18n="about.strengths">Billing, Payments &amp; Quote-to-Cash · Event-Driven Microservices &amp; Sagas · Cloud-Native Operations (GCP · GKE) · Third-Party &amp; AI Integrations · AI-Assisted Engineering · Team Leadership &amp; Mentorship · Customer-Facing Problem Solving · TDD &amp; Clean Architecture</p>
       </div>
     </section>
 
@@ -192,6 +199,7 @@
               <div class="entry__id">
                 <h3 class="entry__role" data-i18n="exp.viirtue.role">Software Engineer / Tech Lead</h3>
                 <p class="entry__org">Viirtue</p>
+                <p class="entry__context" data-i18n="exp.viirtue.context">White-label UCaaS &amp; cloud communications platform serving MSP and reseller partners</p>
               </div>
               <span class="entry__date" data-i18n="exp.viirtue.date">Jan 2022 — Present</span>
             </div>
@@ -200,7 +208,7 @@
               <p class="line__title">Tech Lead <span class="line__date" data-i18n="exp.tl.date">Nov 2023 — Present</span></p>
               <ul class="bullets">
                 <li data-i18n="exp.tl.b1">Led a cross-functional development team of <strong>up to 12 engineers</strong>, coordinating with stakeholders across the organization to deliver features effectively for ViiBE, Viirtue’s white-label quote-to-cash platform — now adopted by <strong>180+ partners (~65% of the partner base)</strong>.</li>
-                <li data-i18n="exp.tl.b2">Designed and delivered the end-to-end integration of an AI voice agent into the platform, capturing per-call usage and automating billing for AI-powered calls — opening a new usage-based revenue stream.</li>
+                <li data-i18n="exp.tl.b2"><strong>Designed and delivered the AI voice agent product line end to end</strong> — quoting, per-call usage metering, cost calculation and automated billing for AI-powered calls — opening a new usage-based revenue stream.</li>
                 <li data-i18n="exp.tl.b3">Refactored the entire reporting system into a more robust, standardized and functional solution, improving reliability and consistency across revenue, usage and accounts-receivable reports.</li>
                 <li data-i18n="exp.tl.b4">Partnered directly with customers to resolve complex, account-specific issues, designing tailored solutions and improving customer satisfaction.</li>
                 <li data-i18n="exp.tl.b5">Mentored teammates through pair programming and knowledge-sharing, fostering a collaborative environment where the team learns together.</li>
@@ -210,12 +218,12 @@
             <div class="entry__line">
               <p class="line__title"><span data-i18n="exp.se.role">Software Engineer</span> <span class="line__date" data-i18n="exp.se.date">Jan 2022 — Nov 2023</span></p>
               <ul class="bullets">
-                <li data-i18n="exp.se.b1">Built an end-customer portal that lets customers stay up to date with their bills and payments in real time, integrating Stripe and Authorize.Net for payment processing and reducing inbound billing-support requests.</li>
-                <li data-i18n="exp.se.b2">Rebuilt the billing system from the ground up, improving reliability and accuracy of automated recurring and usage-based invoicing — now powering monthly invoicing for <strong>3,000+ accounts</strong> and <strong>close to $1M in monthly recurring revenue</strong>.</li>
+                <li data-i18n="exp.se.b1">Built an end-customer portal that lets customers stay up to date with their bills and payments in real time, integrating Stripe and Authorize.Net through saga-based, event-driven payment processing (MassTransit / RabbitMQ) and reducing inbound billing-support requests.</li>
+                <li data-i18n="exp.se.b2"><strong>Rebuilt the billing system from the ground up</strong>, improving reliability and accuracy of automated recurring and usage-based invoicing — now powering monthly invoicing for <strong>3,000+ accounts</strong> and <strong>close to $1M in monthly recurring revenue</strong>.</li>
                 <li data-i18n="exp.se.b3">Rebuilt the quoting system, adding customer e-signature support to let customers sign quotes online and shorten the quote-to-close cycle.</li>
                 <li data-i18n="exp.se.b4">Implemented an automated customer notification system (invoice statuses and payment confirmations) to reduce manual follow-up.</li>
                 <li data-i18n="exp.se.b5">Built an integration with Rev.io and implemented document storage on Microsoft Azure to extend the platform’s billing and storage capabilities.</li>
-                <li data-i18n="exp.se.b6">Maintained and operated cloud-native microservices on GCP, containerized and deployed to Kubernetes (GKE), within a monorepo applying TDD.</li>
+                <li data-i18n="exp.se.b6">Maintained and operated a fleet of 40+ cloud-native .NET and Angular microservices on GCP, containerized and deployed to Kubernetes (GKE) with Helm and Istio through a GitOps CI/CD pipeline, within an Nx monorepo applying TDD.</li>
               </ul>
             </div>
           </li>
@@ -225,6 +233,7 @@
               <div class="entry__id">
                 <h3 class="entry__role" data-i18n="exp.inamika.role">Software Engineer</h3>
                 <p class="entry__org">Inamika</p>
+                <p class="entry__context" data-i18n="exp.inamika.context">Digital products agency</p>
               </div>
               <span class="entry__date" data-i18n="exp.inamika.date">Mar 2020 — Dec 2021</span>
             </div>
@@ -240,6 +249,7 @@
               <div class="entry__id">
                 <h3 class="entry__role" data-i18n="exp.wb.role">Software Engineer</h3>
                 <p class="entry__org">WB Sistemas SRL</p>
+                <p class="entry__context" data-i18n="exp.wb.context">Custom software development company</p>
               </div>
               <span class="entry__date" data-i18n="exp.wb.date">Jan 2016 — Feb 2020</span>
             </div>
@@ -269,43 +279,43 @@
           <div class="skill-group">
             <h3 class="skill-group__title">Backend</h3>
             <ul class="tags">
-              <li>.NET / ASP.NET Core</li><li>ABP</li><li>Entity Framework</li><li>MediatR</li><li>MassTransit</li><li>Node.js</li><li>Spring/Hibernate</li>
+              <li>.NET / ASP.NET Core</li><li>Entity Framework Core</li><li>Dapper</li><li>MediatR</li><li>MassTransit / RabbitMQ</li><li>gRPC</li><li>Node.js</li><li>ABP</li><li>Spring/Hibernate</li>
             </ul>
           </div>
           <div class="skill-group">
             <h3 class="skill-group__title">Frontend</h3>
             <ul class="tags">
-              <li>Angular</li><li>AngularJS</li><li>Ionic</li><li>jQuery</li>
+              <li>Angular</li><li>NgRx</li><li>Tailwind CSS</li><li>Ionic</li><li>AngularJS</li><li>jQuery</li>
             </ul>
           </div>
           <div class="skill-group">
             <h3 class="skill-group__title" data-i18n="grp.data">Data</h3>
             <ul class="tags">
-              <li>PostgreSQL</li><li>MySQL</li><li>SQL Server</li><li>Firebase</li>
+              <li>PostgreSQL</li><li>MySQL</li><li>SQL Server</li><li>BigQuery</li><li>Firebase</li>
             </ul>
           </div>
           <div class="skill-group">
             <h3 class="skill-group__title">Cloud &amp; DevOps</h3>
             <ul class="tags">
-              <li>Google Cloud Platform (GKE)</li><li>Kubernetes</li><li>Docker</li><li>AWS</li><li>Azure</li><li>CI/CD (GoCD, Argo CD / GitOps)</li>
+              <li>Google Cloud Platform (GKE)</li><li>Kubernetes</li><li>Helm</li><li>Istio</li><li>Docker</li><li>CI/CD (GoCD, Argo CD / GitOps)</li><li>Grafana</li><li>AWS</li><li>Azure</li>
             </ul>
           </div>
           <div class="skill-group">
-            <h3 class="skill-group__title" data-i18n="grp.integrations">Integrations</h3>
+            <h3 class="skill-group__title" data-i18n="grp.integrations">Integrations &amp; platforms</h3>
             <ul class="tags">
-              <li>Stripe</li><li>Authorize.Net</li><li>Rev.io</li><li data-i18n="tag.aivoice">AI voice agents</li><li>Keycloak / IdentityServer (SSO)</li>
+              <li>Stripe</li><li>Authorize.Net</li><li>Rev.io</li><li>QuickBooks</li><li>ConnectWise</li><li>NetSapiens (UCaaS)</li><li data-i18n="tag.taxengines">Tax engines (CSI / SureTax)</li><li data-i18n="tag.aivoice">AI voice agents</li><li>Keycloak / IdentityServer (SSO)</li><li>LaunchDarkly / OpenFeature</li>
             </ul>
           </div>
           <div class="skill-group">
             <h3 class="skill-group__title" data-i18n="grp.practices">Practices</h3>
             <ul class="tags">
-              <li>TDD</li><li>SOLID</li><li data-i18n="tag.designpatterns">Design patterns</li><li data-i18n="tag.microservices">Microservices</li><li>Monorepos</li><li>Cloud-native</li><li>Scrum</li>
+              <li>TDD</li><li>SOLID</li><li data-i18n="tag.designpatterns">Design patterns</li><li data-i18n="tag.microservices">Event-driven microservices</li><li data-i18n="tag.sagas">Saga orchestration</li><li>Monorepos (Nx)</li><li data-i18n="tag.flags">Feature flags</li><li>Cloud-native</li><li>Scrum</li>
             </ul>
           </div>
           <div class="skill-group">
-            <h3 class="skill-group__title" data-i18n="grp.ai">AI tooling</h3>
+            <h3 class="skill-group__title" data-i18n="grp.ai">AI &amp; engineering productivity</h3>
             <ul class="tags">
-              <li>Claude Code</li><li>GitHub Copilot</li>
+              <li>Claude Code</li><li>GitHub Copilot</li><li data-i18n="tag.agentic">Agentic workflows</li><li data-i18n="tag.aisdlc">AI-assisted SDLC</li>
             </ul>
           </div>
           <div class="skill-group">

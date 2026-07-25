@@ -22,12 +22,12 @@
     'nav.contact': 'Contacto',
 
     'hero.eyebrow': 'Ingeniero de Software · Tech Lead',
-    'hero.lede': 'Lidero el equipo detrás de ViiBE, la plataforma white-label de quote-to-cash de Viirtue — desde un motor de facturación que procesa cerca de US$1M en ingresos recurrentes mensuales hasta la facturación por consumo de agentes de voz con IA. Me apasiona convertir problemas complejos en productos que la gente realmente disfruta usar, y ayudar a crecer a mi equipo.',
+    'hero.lede': 'Soy el Tech Lead de ViiBE, la plataforma white-label de quote-to-cash de Viirtue — desde un motor de facturación que procesa cerca de US$1M en ingresos recurrentes mensuales hasta la facturación por consumo de agentes de voz con IA. Me apasiona convertir problemas complejos en productos que la gente realmente disfruta usar, y ayudar a crecer a mi equipo.',
     'hero.cv': 'Descargar CV',
 
     'about.eyebrow': 'Perfil',
     'about.title': 'Resumen',
-    'about.body': 'Ingeniero de software full-stack con más de 9 años construyendo aplicaciones web escalables y mantenibles — actualmente Tech Lead de ViiBE, la plataforma white-label de quote-to-cash de Viirtue, y uno de los principales contribuidores de su base de código de más de 40 microservicios. Reconstruí el motor de facturación que hoy procesa <strong>cerca de US$1M en ingresos recurrentes mensuales</strong> en <strong>más de 3.000 cuentas</strong>, contribuyendo a una <strong>Serie A de US$10M</strong>. Amplia experiencia en .NET, Angular y Node.js: diseño de sistemas de facturación, cotización, impuestos y pagos, integración de servicios de terceros y de IA, y operación de microservicios event-driven y cloud-native en GCP (GKE / Kubernetes). Lidero y mentoreo un equipo multifuncional de hasta 12 personas, trabajando AI-first con herramientas agénticas como Claude Code en todo el ciclo de desarrollo. Apasionado por la arquitectura limpia, TDD y el aprendizaje continuo.',
+    'about.body': 'Ingeniero de software full-stack con más de 9 años construyendo aplicaciones web escalables y mantenibles — actualmente Tech Lead de ViiBE, la plataforma white-label de quote-to-cash de Viirtue, y uno de los principales contribuidores de su base de código de más de 40 microservicios. Reconstruí el motor de facturación que hoy procesa <strong>cerca de US$1M en ingresos recurrentes mensuales</strong> en <strong>más de 3.000 cuentas</strong>, contribuyendo a una <strong>Serie A de US$10M</strong>. Amplia experiencia en .NET, Angular y Node.js: diseño de sistemas de facturación, cotización, impuestos y pagos, integración de servicios de terceros y de IA, y operación de microservicios event-driven y cloud-native en GCP (GKE / Kubernetes). Lidero la entrega diaria y la mentoría de un equipo multifuncional de hasta 12 personas, trabajando AI-first con herramientas agénticas como Claude Code en todo el ciclo de desarrollo. Apasionado por la arquitectura limpia, TDD y el aprendizaje continuo.',
     'about.strengths': 'Facturación, pagos y quote-to-cash · Microservicios event-driven y sagas · Operación cloud-native (GCP · GKE) · Integraciones de terceros y de IA · Ingeniería asistida por IA · Liderazgo y mentoría de equipos · Resolución de problemas de cara al cliente · TDD y arquitectura limpia',
 
     'exp.eyebrow': 'Experiencia',
@@ -66,6 +66,7 @@
     'skills.title': 'Herramientas y prácticas',
     'grp.languages': 'Lenguajes',
     'grp.data': 'Datos',
+    'grp.cloud': 'Cloud y operaciones de plataforma',
     'grp.integrations': 'Integraciones y plataformas',
     'grp.practices': 'Prácticas',
     'grp.ai': 'IA y productividad de ingeniería',
